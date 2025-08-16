@@ -186,7 +186,7 @@ public class TestProductCacheService {
 
     @Nested
     @DisplayName("Обновить количество  ")
-    class updateActiveQuantity {
+    class updateStockQuantity {
         @Test
         @DisplayName("Обновить количество если продукт существует ")
         void whenProductExists_updateStockQuantity() {
@@ -207,7 +207,7 @@ public class TestProductCacheService {
     @DisplayName("Удалить продукт ")
     class deleteActiveQuantity {
         @Test
-        @DisplayName("Удалить  если продукт существет ")
+        @DisplayName("Удалить  если продукт существует ")
         void whenProductExists_deleteProduct() {
             doNothing().when(productRepository).deleteById(PRODUCT_ID);
             productCacheService.delete(PRODUCT_ID);
