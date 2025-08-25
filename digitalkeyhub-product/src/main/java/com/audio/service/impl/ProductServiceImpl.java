@@ -27,6 +27,7 @@ import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -194,7 +195,7 @@ public class ProductServiceImpl implements ProductService {
         List<CommentServiceResponse> recentComments = commentService.getCommentsForEntity(productId, "PRODUCT")
                 .stream()
                 .limit(5)
-                .toList();
+                .collect(Collectors.toList());
 
         return ProductServiceDetailsResponse.builder()
                 .id(cacheDto.getId())
